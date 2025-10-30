@@ -2,7 +2,7 @@ from typing import List, Dict, Tuple
 
 SYSTEM_BASE = "You are ProcureCopilot, an assistant for infrastructure tender analysis. Answer with compliance-focused, accurate, and actionable insights."
 
-def build_messages(query: str, retrieved: List[Tuple[float, str]], response_mode: str, web_snippets: List[Dict] = None):
+def build_messages(query: str, retrieved, response_mode: str, web_snippets = None):
     web_snippets = web_snippets or []
     context_blocks = []
     for score, chunk in retrieved:
