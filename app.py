@@ -6,7 +6,7 @@ from utils.prompting import build_messages
 from config.config import CHUNKING_MODE, LATE_TOP_PAGES, LATE_FINAL_K, PROVIDER
 
 st.set_page_config(page_title="ProcureCopilot — Tenders RAG", page_icon="🦺", layout="wide")
-st.title("🦺 ProcureCopilot — Tenders RAG + Live Search (Late Chunking; Gemini Default)")
+st.title("🦺 ProcureCopilot — Tenders RAG + Live Search")
 
 with st.sidebar:
     st.header("Settings")
