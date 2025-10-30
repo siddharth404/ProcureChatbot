@@ -1,15 +1,23 @@
 import os
 
-# ==== LLM Provider Settings ====
+# ==== LLM Provider Settings (Gemini default) ====
+PROVIDER = os.getenv("PROVIDER", "gemini")  # "gemini" | "openai" | "groq" | "huggingface"
+
+# OpenAI
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
-# Optional providers
-PROVIDER = os.getenv("PROVIDER", "openai")  # "openai" | "groq" | "gemini"
+# Groq
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 GROQ_MODEL   = os.getenv("GROQ_MODEL", "llama-3.1-70b-versatile")
+
+# Gemini (default)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL   = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+GEMINI_MODEL   = os.getenv("GEMINI_MODEL", "models/gemini-2.0-flash-lite")
+
+# Hugging Face
+HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY", "")
+HUGGINGFACE_MODEL   = os.getenv("HUGGINGFACE_MODEL", "mistralai/Mistral-7B-Instruct-v0.2")
 
 # ==== Search Settings ====
 SERPAPI_KEY = os.getenv("SERPAPI_KEY", "")

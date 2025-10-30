@@ -3,14 +3,14 @@ from models.llm import LLMClient
 from utils.rag import RAGIndex
 from utils.search import web_search
 from utils.prompting import build_messages
-from config.config import CHUNKING_MODE, LATE_TOP_PAGES, LATE_FINAL_K
+from config.config import CHUNKING_MODE, LATE_TOP_PAGES, LATE_FINAL_K, PROVIDER
 
 st.set_page_config(page_title="ProcureCopilot — Tenders RAG", page_icon="🦺", layout="wide")
-st.title("🦺 ProcureCopilot — Tenders RAG + Live Search (Late Chunking Ready)")
+st.title("🦺 ProcureCopilot — Tenders RAG + Live Search (Late Chunking; Gemini Default)")
 
 with st.sidebar:
     st.header("Settings")
-    st.caption(f"Chunking mode: **{CHUNKING_MODE.upper()}**")
+    st.caption(f"Chunking mode: **{CHUNKING_MODE.upper()}**, Provider: **{PROVIDER.upper()}**")
     response_mode = st.radio("Response Mode", ["Concise", "Detailed"], index=0)
     use_web = st.toggle("Use Web Search", value=False)
     max_web = st.slider("Max Web Results", 0, 10, 5)
