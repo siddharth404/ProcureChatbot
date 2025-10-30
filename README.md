@@ -65,18 +65,17 @@ ProcureCopilot/
 │   └── screenshot.png         # Placeholder for app UI screenshot
 ├── requirements.txt
 └── README.md
+```
 🚀 Quickstart
 1️⃣ Clone and Install Dependencies
-bash
-Copy code
 git clone https://github.com/<your-username>/ProcureCopilot.git
 cd ProcureCopilot
 pip install -r requirements.txt
+
 2️⃣ Configure Environment Variables
+
 Create a .env file or export variables directly:
 
-bash
-Copy code
 # Provider: openai (default) | groq | gemini
 export PROVIDER=openai
 
@@ -101,10 +100,11 @@ export EMBEDDING_MODEL_NAME="sentence-transformers/all-MiniLM-L6-v2"
 export CHUNK_SIZE=1200
 export CHUNK_OVERLAP=200
 export TOP_K=4
+
 🧰 Running Locally
-bash
-Copy code
 streamlit run app.py
+
+
 Visit 👉 http://localhost:8501 in your browser.
 
 Steps:
@@ -124,9 +124,11 @@ Type a query like:
 Switch Response Mode to “Concise” or “Detailed” as needed.
 
 ☁️ Deploying on Streamlit Cloud
+
 Push your repo to GitHub.
 
-Go to Streamlit Cloud.
+Go to Streamlit Cloud
+.
 
 Create a New App → Select your GitHub repo.
 
@@ -136,12 +138,12 @@ Branch: main
 
 In Secrets, add:
 
-ini
-Copy code
 OPENAI_API_KEY = "sk-..."
 SERPAPI_KEY = ""
 GROQ_API_KEY = ""
 GEMINI_API_KEY = ""
+
+
 Click Deploy 🚀
 
 Copy your public URL (e.g. https://yourname-procurecopilot.streamlit.app)
@@ -155,14 +157,12 @@ Step	Description
 4. Retrieval	Top-K chunks retrieved based on query.
 5. Augmentation	LLM combines retrieved + web context → final answer.
 6. Output Modes	Prompt builder formats response as Concise or Detailed.
-
 🧪 Example Queries
 Query	Expected Behavior
 “List the eligibility and turnover criteria.”	Extracts relevant clauses from local PDF.
 “What is the EMD amount and bid validity?”	Returns numeric details from the tender.
 “Has any corrigendum been published recently?”	Triggers web search for latest results.
 “Summarize all technical requirements.”	Detailed structured response with bullet points.
-
 🔧 Configuration Parameters
 Variable	Default	Description
 CHUNK_SIZE	1200	Token length per text chunk
@@ -170,7 +170,6 @@ CHUNK_OVERLAP	200	Overlap between chunks
 TOP_K	4	Retrieved chunks count
 SEARCH_PROVIDER	ddg	ddg or serpapi
 PROVIDER	openai	LLM provider: openai, groq, gemini
-
 🧩 Technology Stack
 Layer	Library
 Frontend / UI	Streamlit
@@ -179,8 +178,8 @@ Embeddings	Sentence-Transformers
 Vector Search	FAISS
 PDF Parsing	PyPDF
 Web Search	DuckDuckGo / SerpAPI
-
 🧱 Project Strengths
+
 ✅ Modular and extensible design
 ✅ Streamlit-ready for instant deployment
 ✅ Secure key handling (env vars only)
@@ -189,8 +188,6 @@ Web Search	DuckDuckGo / SerpAPI
 ✅ Multi-provider support (OpenAI, Groq, Gemini)
 
 💻 Requirements
-shell
-Copy code
 streamlit==1.37.0
 openai>=1.30.0
 sentence-transformers>=3.0.0
@@ -201,24 +198,29 @@ serpapi>=0.1.5
 groq>=0.9.0
 google-generativeai>=0.7.0
 Pillow>=10.4.0
+
 🌍 Example Deployment (Preview)
+
 Live App:
 
 (Replace with your deployed Streamlit Cloud URL)
 https://<your-username>-procurecopilot.streamlit.app
 
 🧾 License
-This project is licensed under the MIT License.
 
-sql
-Copy code
-MIT License © 2025 Siddharth Kaushik
+This project is licensed under the MIT License
+.
+
+MIT License © 2025 Siddharth Kaushik  
 Developed under NeoStats AI Engineer Case Study
+
 🤝 Contributing
+
 Contributions are welcome!
 Please fork this repository and submit a pull request for improvements or bug fixes.
 
 👤 Author
+
 Siddharth Kaushik
 M.Sc. Data Science & Management — IIT Ropar × IIM Amritsar
 📧 Email me
