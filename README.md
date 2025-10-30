@@ -76,7 +76,7 @@ Visit 👉 `http://localhost:8501` in your browser.
    GEMINI_API_KEY = ""
    ```
 5. Click **Deploy** 🚀  
-6. Copy your public URL (e.g. `https://yourname-procurecopilot.streamlit.app`)  
+6. Copy your public URL (e.g. `https://procurechatbot.streamlit.app/`)  
    → Add it in your presentation or submission.
 
 ---
@@ -161,8 +161,8 @@ Pillow>=10.4.0
 ## 🌍 Example Deployment (Preview)
 
 **Live App:**  
-> _(Replace with your deployed Streamlit Cloud URL)_  
-`https://<your-username>-procurecopilot.streamlit.app`
+>   
+`https://procurechatbot.streamlit.app/`
 
 ---
 
@@ -171,8 +171,6 @@ Pillow>=10.4.0
 This project is licensed under the [MIT License](LICENSE).
 
 ```
-MIT License © 2025 Siddharth Kaushik  
-Developed under NeoStats AI Engineer Case Study
 ```
 
 ---
