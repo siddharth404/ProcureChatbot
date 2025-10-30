@@ -5,7 +5,11 @@ SYSTEM_BASE = "You are ProcureCopilot, an assistant for infrastructure tender an
 def build_messages(query: str, retrieved, response_mode: str, web_snippets = None):
     web_snippets = web_snippets or []
     context_blocks = []
-    for score, chunk in retrieved:
+    for item in retrieved:
+        if isinstance(item, tuple):
+            score, chunk = item
+        else:
+            score, chunk = 1.0, item
         context_blocks.append(f"[score={score:.3f}] {chunk}")
     context_text = "\n\n".join(context_blocks) if context_blocks else "No local context."
 
@@ -17,7 +21,7 @@ def build_messages(query: str, retrieved, response_mode: str, web_snippets = Non
     if response_mode == "Concise":
         user_directive = "Provide a short, bullet summary with key numbers and requirements. If uncertain, clearly state assumptions."
     else:
-        user_directive = "Provide a detailed, well-structured response with headers, bullet points, and explicit citations to [Local #i] or [Web #i] where relevant."
+        user_directive = "Provide a detailed, well-structured response with headers, bullet points, and explicit source cues (Local/Web)."
 
     system = f"""{SYSTEM_BASE}
 [Local Context]

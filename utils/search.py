@@ -1,12 +1,7 @@
 from typing import List, Dict
 from config.config import SERPAPI_KEY, SEARCH_PROVIDER
-import time
 
 def web_search(query: str, max_results: int = 5) -> List[Dict]:
-    """
-    Returns a list of dicts: {title, link, snippet}.
-    Uses DuckDuckGo (no key) by default; falls back to SerpAPI if configured.
-    """
     results: List[Dict] = []
     try:
         if SEARCH_PROVIDER == "serpapi" and SERPAPI_KEY:
