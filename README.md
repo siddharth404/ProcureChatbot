@@ -171,8 +171,6 @@ Pillow>=10.4.0
 This project is licensed under the [MIT License](LICENSE).
 
 ```
-MIT License © 2025 Siddharth Kaushik  
-Developed under NeoStats AI Engineer Case Study
 ```
 
 ---
